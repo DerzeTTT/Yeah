@@ -197,7 +197,7 @@ Raw_Game_MT.__namecall = function(self, ...)
 
 	local Arguments = {...}
 
-	if self == Replicated_Storage.DefaultChatSystemChatEvents.SayMessageRequest and (Arguments[1] ~= "toggle" and Settings.Toggled) then
+	if self == Replicated_Storage.DefaultChatSystemChatEvents.SayMessageRequest then
 
 		local Ret = General_Library.Check_Prefix(tostring(Arguments[1]))
 
