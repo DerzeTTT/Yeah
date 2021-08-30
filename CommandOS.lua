@@ -128,7 +128,7 @@ General_Library = {
 Connection_Library = {
 	Chatted = function(Rawer_Message)
 		
-		local Raw_Message = Rawer_Message
+		local Raw_Message = Rawer_Message:lower()
 
 		local Ret = General_Library.Check_Prefix(Raw_Message)
 
