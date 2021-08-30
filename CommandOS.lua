@@ -1,7 +1,3 @@
-wait(5)
-
-repeat wait() until game.Loaded
-
 --//Services
 local Players = game:GetService("Players")
 local Chat_Service = game:GetService("Chat")
