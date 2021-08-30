@@ -106,7 +106,7 @@ General_Library = {
 		if not Command_Function then
 
 			Notifications.Push({
-				Notification_Paramets = {
+				Parameters = {
 					Title = "ERROR";
 					Text = Command.." is an invalid command!";
 					Duration = 2;
@@ -126,7 +126,9 @@ General_Library = {
 }
 
 Connection_Library = {
-	Chatted = function(Raw_Message)
+	Chatted = function(Rawer_Message)
+		
+		local Raw_message = Rawer_Message:lower()
 
 		local Ret = General_Library.Check_Prefix(Raw_Message)
 
@@ -193,7 +195,7 @@ Raw_Game_MT.__namecall = function(self, ...)
 
 	local Arguments = {...}
 
-	if self == Replicated_Storage.DefaultChatSystemChatEvents.SayMessageRequest and Settings.Toggled then
+	if self == Replicated_Storage.DefaultChatSystemChatEvents.SayMessageRequest and Settings.Toggled and Arguments[1]:lower() ~= "toggle" then
 
 		local Ret = General_Library.Check_Prefix(tostring(Arguments[1]))
 
