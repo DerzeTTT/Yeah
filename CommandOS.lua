@@ -128,7 +128,7 @@ General_Library = {
 Connection_Library = {
 	Chatted = function(Rawer_Message)
 		
-		local Raw_message = Rawer_Message
+		local Raw_Message = Rawer_Message
 
 		local Ret = General_Library.Check_Prefix(Raw_Message)
 
@@ -195,7 +195,7 @@ Raw_Game_MT.__namecall = function(self, ...)
 
 	local Arguments = {...}
 
-	if self == Replicated_Storage.DefaultChatSystemChatEvents.SayMessageRequest and Settings.Toggled and Arguments[1]:lower() ~= "toggle" then
+	if self == Replicated_Storage.DefaultChatSystemChatEvents.SayMessageRequest and (Arguments[1] ~= "toggle" and Settings.Toggled) then
 
 		local Ret = General_Library.Check_Prefix(tostring(Arguments[1]))
 
